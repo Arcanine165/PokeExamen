@@ -17,6 +17,12 @@ class HomeViewController: UIViewController {
         setupCollectionView()
         setupUI()
         setupButtonAction()
+        setupTimer()
+    }
+    func setupTimer(){
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) {[weak self] timer in
+            self?.presenter?.getPokemon()
+        }
     }
     func setupCollectionView(){
         homeView.pokemonCollectionView.dataSource = self
