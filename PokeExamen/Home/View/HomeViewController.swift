@@ -8,12 +8,21 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    var presenter : HomeViewToPresenter? 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        presenter?.viewDidLoad()
+        print(presenter == nil)
+        view.backgroundColor = .white
     }
 
 
 }
 
+extension HomeViewController : HomePresenterToView{
+    func reloadInfo() {
+        print("que show")
+    }
+    
+    
+}
