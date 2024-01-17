@@ -16,10 +16,17 @@ class HomeViewController: UIViewController {
         homeView = HomeView()
         setupCollectionView()
         setupUI()
+        setupButtonAction()
     }
     func setupCollectionView(){
         homeView.pokemonCollectionView.dataSource = self
         homeView.pokemonCollectionView.delegate = self
+    }
+    func setupButtonAction(){
+        homeView.button.addTarget(self, action: #selector(showNewPokemon), for: .touchUpInside)
+    }
+    @objc func showNewPokemon(){
+        presenter?.getPokemon()
     }
     func setupUI(){
         view.backgroundColor = .white
@@ -56,13 +63,10 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDelegat
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-               let screenSize = windowScene.coordinateSpace.bounds
-               return CGSize(width: (screenSize.width / 2) - 30, height: 150)
-           } else {
-               print("Failed to get UIWindowScene")
-               return CGSize(width: 0, height: 0)
-           }
+        return CGSize(width: (UIScreen.main.bounds.width / 2) - 20, height: 150)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 13, bottom: 0, right: 13)
     }
     
 }
