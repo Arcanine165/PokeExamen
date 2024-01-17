@@ -36,6 +36,7 @@ final class Networking{
                 let response = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(response))
             }catch{
+                
                 completion(.failure(NetworkError.canNotParseData))
             }
         }.resume()
