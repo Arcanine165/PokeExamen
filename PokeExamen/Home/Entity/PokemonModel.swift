@@ -8,4 +8,11 @@
 import Foundation
 struct PokemonModel : Codable{
     let name : String
+    let sprites : Sprites
+}
+struct Sprites : Codable{
+    let frontImage : String?
+    enum CodingKeys: String, CodingKey {
+        case frontImage = "front_default"
+    }
 }
