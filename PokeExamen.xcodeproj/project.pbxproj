@@ -14,6 +14,10 @@
 		418607822B573F5D00963000 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418607802B573F5D00963000 /* LaunchScreen.storyboard */; };
 		418607952B574FB500963000 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418607942B574FB500963000 /* Networking.swift */; };
 		418607972B57516800963000 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418607962B57516800963000 /* PokemonModel.swift */; };
+		4186079A2B578F9B00963000 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418607992B578F9B00963000 /* Protocols.swift */; };
+		4186079C2B57903B00963000 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186079B2B57903B00963000 /* HomePresenter.swift */; };
+		4186079E2B58376C00963000 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186079D2B58376C00963000 /* HomeInteractor.swift */; };
+		418607A02B583C1300963000 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186079F2B583C1300963000 /* HomeRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		418607832B573F5D00963000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		418607942B574FB500963000 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		418607962B57516800963000 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
+		418607992B578F9B00963000 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		4186079B2B57903B00963000 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		4186079D2B58376C00963000 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		4186079F2B583C1300963000 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,7 @@
 		418607892B574DEA00963000 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				418607982B578F8600963000 /* Protocols */,
 				4186078E2B574E0B00963000 /* View */,
 				4186078D2B574E0600963000 /* Interactor */,
 				4186078C2B574E0000963000 /* Presenter */,
@@ -85,6 +94,7 @@
 		4186078A2B574DF000963000 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				4186079F2B583C1300963000 /* HomeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -100,6 +110,7 @@
 		4186078C2B574E0000963000 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				4186079B2B57903B00963000 /* HomePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -107,6 +118,7 @@
 		4186078D2B574E0600963000 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				4186079D2B58376C00963000 /* HomeInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -156,6 +168,14 @@
 				418607752B573F5B00963000 /* AppDelegate.swift */,
 			);
 			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		418607982B578F8600963000 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				418607992B578F9B00963000 /* Protocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,10 +248,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4186079C2B57903B00963000 /* HomePresenter.swift in Sources */,
 				4186077A2B573F5B00963000 /* HomeViewController.swift in Sources */,
 				418607762B573F5B00963000 /* AppDelegate.swift in Sources */,
+				4186079E2B58376C00963000 /* HomeInteractor.swift in Sources */,
 				418607782B573F5B00963000 /* SceneDelegate.swift in Sources */,
+				4186079A2B578F9B00963000 /* Protocols.swift in Sources */,
 				418607972B57516800963000 /* PokemonModel.swift in Sources */,
+				418607A02B583C1300963000 /* HomeRouter.swift in Sources */,
 				418607952B574FB500963000 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
