@@ -12,6 +12,8 @@
 		4186077A2B573F5B00963000 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418607792B573F5B00963000 /* HomeViewController.swift */; };
 		4186077F2B573F5D00963000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4186077E2B573F5D00963000 /* Assets.xcassets */; };
 		418607822B573F5D00963000 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418607802B573F5D00963000 /* LaunchScreen.storyboard */; };
+		418607952B574FB500963000 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418607942B574FB500963000 /* Networking.swift */; };
+		418607972B57516800963000 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418607962B57516800963000 /* PokemonModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		4186077E2B573F5D00963000 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		418607812B573F5D00963000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		418607832B573F5D00963000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		418607942B574FB500963000 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		418607962B57516800963000 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		4186078B2B574DFC00963000 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				418607962B57516800963000 /* PokemonModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 		418607902B574E2E00963000 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				418607942B574FB500963000 /* Networking.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -225,6 +231,8 @@
 				4186077A2B573F5B00963000 /* HomeViewController.swift in Sources */,
 				418607762B573F5B00963000 /* AppDelegate.swift in Sources */,
 				418607782B573F5B00963000 /* SceneDelegate.swift in Sources */,
+				418607972B57516800963000 /* PokemonModel.swift in Sources */,
+				418607952B574FB500963000 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +374,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://pokeapi.co/api/v2";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -392,6 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://pokeapi.co/api/v2";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
