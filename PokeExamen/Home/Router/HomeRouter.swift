@@ -6,14 +6,14 @@
 //
 
 import Foundation
-protocol HomeRouterProtocol {
-    var controller : HomeViewController? {get set}
-    func setupComponents()
-    func goToDetail()
-}
+
 
 final class HomeRouter : HomeRouterProtocol {
+    // MARK: - Attributes
+    
     var controller: HomeViewController?
+    
+    // MARK: - Functions
     
     func setupComponents() {
         controller = HomeViewController()

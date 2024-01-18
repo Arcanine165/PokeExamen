@@ -9,6 +9,7 @@ import UIKit
 import Kingfisher
 
 class PokemonCollectionViewCell: UICollectionViewCell {
+    // MARK: - Attributes
     static let identifier = "PokemonCollectionViewCell"
     
     lazy var pokemonImage : UIImageView = {
@@ -40,7 +41,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+    // MARK: - initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -50,7 +51,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    // MARK: - functions
     override func prepareForReuse() {
         pokemonName.text = nil
         pokemonImage.image = nil

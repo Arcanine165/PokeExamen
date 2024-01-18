@@ -8,8 +8,13 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    var presenter : HomeViewToPresenter? 
+    // MARK: - Attributes
+    
+    var presenter : HomeViewToPresenter?
     var homeView : HomeView!
+    
+    // MARK: - ViewCiclye functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
@@ -19,6 +24,8 @@ class HomeViewController: UIViewController {
         setupButtonAction()
         setupTimer()
     }
+    // MARK: - Functions
+    
     func setupTimer(){
         Timer.scheduledTimer(withTimeInterval: 5, repeats: true) {[weak self] timer in
             self?.presenter?.getPokemon()
@@ -31,9 +38,7 @@ class HomeViewController: UIViewController {
     func setupButtonAction(){
         homeView.button.addTarget(self, action: #selector(showNewPokemon), for: .touchUpInside)
     }
-    @objc func showNewPokemon(){
-        presenter?.getPokemon()
-    }
+   
     func setupUI(){
         view.backgroundColor = .white
         view.addSubview(homeView)
@@ -44,7 +49,14 @@ class HomeViewController: UIViewController {
             homeView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
     }
+    // MARK: - OBJC Functions
+    
+    @objc func showNewPokemon(){
+        presenter?.getPokemon()
+    }
 }
+
+// MARK: - Extension HomePresenterToView
 
 extension HomeViewController : HomePresenterToView{
     func reloadInfo() {
@@ -55,7 +67,7 @@ extension HomeViewController : HomePresenterToView{
     
     
 }
-
+// MARK: - Extension UICollectionViewDelegates
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter?.pokemons.count ?? 0

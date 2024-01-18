@@ -10,15 +10,22 @@ import Foundation
 protocol HomePresenterProtocol : AnyObject{
     var view : HomePresenterToView? {get set}
     var interactor : HomePresenterToInteractor? {get set}
-    
-    
 }
+
+protocol HomeRouterProtocol {
+    var controller : HomeViewController? {get set}
+    func setupComponents()
+    func goToDetail()
+}
+
 protocol HomeInteractorProtocol : AnyObject {
     var presenter : HomeInteractorToPresenter? {get set}
 }
+
 protocol HomePresenterToInteractor : AnyObject{
     func getPokemon()
 }
+
 protocol HomeInteractorToPresenter : AnyObject{
     func fetchPokemonSuccesfully(pokemon : PokemonModel)
     func fetchPokemonFailed()
@@ -32,5 +39,4 @@ protocol HomeViewToPresenter : AnyObject {
     func viewDidLoad()
     func getPokemon()
     var pokemons : [PokemonModel] {get set}
-
 }

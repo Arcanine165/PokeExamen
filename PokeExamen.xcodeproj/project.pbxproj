@@ -88,9 +88,7 @@
 			children = (
 				418607932B574E4D00963000 /* AppDelegates */,
 				418607922B574E3E00963000 /* Resources */,
-				418607912B574E3600963000 /* Utils */,
 				418607902B574E2E00963000 /* Networking */,
-				4186078F2B574E2800963000 /* Extensions */,
 				418607892B574DEA00963000 /* Home */,
 				418607802B573F5D00963000 /* LaunchScreen.storyboard */,
 				418607832B573F5D00963000 /* Info.plist */,
@@ -153,26 +151,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		4186078F2B574E2800963000 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		418607902B574E2E00963000 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				418607942B574FB500963000 /* Networking.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		418607912B574E3600963000 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		418607922B574E3E00963000 /* Resources */ = {
