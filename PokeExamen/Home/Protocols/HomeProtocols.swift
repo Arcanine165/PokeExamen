@@ -15,7 +15,7 @@ protocol HomePresenterProtocol : AnyObject{
 protocol HomeRouterProtocol {
     var controller : HomeViewController? {get set}
     func setupComponents()
-    func goToDetail()
+    func goToDetail(with id : Int)
 }
 
 protocol HomeInteractorProtocol : AnyObject {
@@ -38,5 +38,6 @@ protocol HomePresenterToView : AnyObject {
 protocol HomeViewToPresenter : AnyObject {
     func viewDidLoad()
     func getPokemon()
+    func goToPokemonDetail(with id : Int)
     var pokemons : [PokemonModel] {get set}
 }

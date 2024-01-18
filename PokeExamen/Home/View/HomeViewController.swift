@@ -40,6 +40,7 @@ class HomeViewController: UIViewController {
     }
    
     func setupUI(){
+        title = "Pokedex"
         view.backgroundColor = .white
         view.addSubview(homeView)
         NSLayoutConstraint.activate([
@@ -85,6 +86,10 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDelegat
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 13, bottom: 0, right: 13)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pokemon = presenter?.pokemons[indexPath.row].id
+        presenter?.goToPokemonDetail(with: pokemon ?? 0)
     }
     
 }

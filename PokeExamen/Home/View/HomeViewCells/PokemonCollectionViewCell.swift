@@ -80,8 +80,8 @@ class PokemonCollectionViewCell: UICollectionViewCell {
             pokemonName.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             
             pokemonTypes.topAnchor.constraint(equalTo: pokemonName.bottomAnchor,constant: 3),
-            pokemonTypes.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: 8),
-            pokemonTypes.rightAnchor.constraint(equalTo: contentView.rightAnchor,constant: -8)
+            pokemonTypes.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: 30),
+            pokemonTypes.rightAnchor.constraint(equalTo: contentView.rightAnchor,constant: -30)
             
         ])
     }
