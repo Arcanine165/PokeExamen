@@ -14,7 +14,7 @@ final class PokemonDetailPresenter : PokemonDetailPresenterProtocol{
     
     var interactor: PokemonDetailPresenterToInteractor?
     
-    var router : PokemonDetailRouterProtocol?
+    weak var router : PokemonDetailRouterProtocol?
     
 }
 

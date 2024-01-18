@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410793B02B58EA100012C910 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410793AF2B58EA100012C910 /* StatView.swift */; };
 		418607762B573F5B00963000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418607752B573F5B00963000 /* AppDelegate.swift */; };
 		418607782B573F5B00963000 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418607772B573F5B00963000 /* SceneDelegate.swift */; };
 		4186077A2B573F5B00963000 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418607792B573F5B00963000 /* HomeViewController.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		36B5FEF7FD146A067D9D990D /* Pods_PokeExamen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeExamen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		410793AC2B58D8DB0012C910 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		410793AF2B58EA100012C910 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		418607722B573F5B00963000 /* PokeExamen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeExamen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		418607752B573F5B00963000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		418607772B573F5B00963000 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		410793AE2B58EA040012C910 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				410793AF2B58EA100012C910 /* StatView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		418607692B573F5B00963000 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		418607742B573F5B00963000 /* PokeExamen */ = {
 			isa = PBXGroup;
 			children = (
+				410793AE2B58EA040012C910 /* Utils */,
 				410793AC2B58D8DB0012C910 /* Info.plist */,
 				418607A92B58B86C00963000 /* PokemonDetail */,
 				418607932B574E4D00963000 /* AppDelegates */,
@@ -400,6 +411,7 @@
 				418607782B573F5B00963000 /* SceneDelegate.swift in Sources */,
 				418607B52B58CE1800963000 /* PokemonDetailProtocols.swift in Sources */,
 				4186079A2B578F9B00963000 /* HomeProtocols.swift in Sources */,
+				410793B02B58EA100012C910 /* StatView.swift in Sources */,
 				418607B82B58CF7B00963000 /* PokemonDetailPresenter.swift in Sources */,
 				418607972B57516800963000 /* PokemonModel.swift in Sources */,
 				418607A02B583C1300963000 /* HomeRouter.swift in Sources */,

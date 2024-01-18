@@ -39,6 +39,55 @@ class PokemonDetailView: UIView {
         return label
     }()
     
+    lazy var hpStatView : StatView = {
+        let statView = StatView()
+        statView.statName.text = "HP"
+        statView.translatesAutoresizingMaskIntoConstraints = false
+        return statView
+    }()
+    
+    lazy var attackStatView : StatView = {
+        let statView = StatView()
+        statView.statName.text = "ATK"
+        statView.translatesAutoresizingMaskIntoConstraints = false
+        return statView
+    }()
+    
+    lazy var defenseStatView : StatView = {
+        let statView = StatView()
+        statView.statName.text = "DEF"
+        statView.translatesAutoresizingMaskIntoConstraints = false
+        return statView
+    }()
+    
+    lazy var specialDefenseStatView : StatView = {
+        let statView = StatView()
+        statView.statName.text = "SP DEF"
+        statView.translatesAutoresizingMaskIntoConstraints = false
+        return statView
+    }()
+    
+    lazy var specialAttackStatView : StatView = {
+        let statView = StatView()
+        statView.statName.text = "SP ATK"
+        statView.translatesAutoresizingMaskIntoConstraints = false
+        return statView
+    }()
+    
+    lazy var speedStatView : StatView = {
+        let statView = StatView()
+        statView.statName.text = "SPEED"
+        statView.translatesAutoresizingMaskIntoConstraints = false
+        return statView
+    }()
+    
+    lazy var statsStackView : UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [hpStatView,attackStatView,defenseStatView,specialAttackStatView,specialDefenseStatView,speedStatView])
+        stack.axis = .vertical
+        stack.spacing = 8
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -61,6 +110,7 @@ class PokemonDetailView: UIView {
         addSubview(pokemonImage)
         addSubview(pokemonName)
         addSubview(pokemonTypes)
+        addSubview(statsStackView)
         NSLayoutConstraint.activate([
             
             pokemonImage.topAnchor.constraint(equalTo: topAnchor,constant: 10),
@@ -74,8 +124,11 @@ class PokemonDetailView: UIView {
             
             pokemonTypes.topAnchor.constraint(equalTo: pokemonName.bottomAnchor,constant: 3),
             pokemonTypes.leftAnchor.constraint(equalTo: leftAnchor,constant: 30),
-            pokemonTypes.rightAnchor.constraint(equalTo: rightAnchor, constant: -30)
+            pokemonTypes.rightAnchor.constraint(equalTo: rightAnchor, constant: -30),
             
+            statsStackView.topAnchor.constraint(equalTo: pokemonTypes.bottomAnchor,constant: 8),
+            statsStackView.leftAnchor.constraint(equalTo: leftAnchor,constant: 8),
+            statsStackView.rightAnchor.constraint(equalTo: rightAnchor,constant: -8)
             
         ])
     }
@@ -90,6 +143,7 @@ class PokemonDetailView: UIView {
         layer.insertSublayer(gradient, at: 0)
         let elements = pokemon.types
         setupPokemonTypes(with: elements)
+        setupStats(with: pokemon)
         
     }
     func setupPokemonTypes(with types : [TypeElement]?){
@@ -100,5 +154,20 @@ class PokemonDetailView: UIView {
             pokemonTypes.text = "\(types[0].type.name)"
             
         }
+    }
+    func setupStats(with pokemon : PokemonModel){
+        let stats = pokemon.stats
+        let hp = stats[0].baseStat
+        let atk = stats[1].baseStat
+        let def = stats[2].baseStat
+        let specialAtk = stats[3].baseStat
+        let specialDef = stats[4].baseStat
+        let speed = stats[5].baseStat
+        hpStatView.setupStatBar(with: hp)
+        attackStatView.setupStatBar(with: atk)
+        defenseStatView.setupStatBar(with: def)
+        specialAttackStatView.setupStatBar(with: specialAtk)
+        specialDefenseStatView.setupStatBar(with: specialDef)
+        speedStatView.setupStatBar(with: speed)
     }
 }

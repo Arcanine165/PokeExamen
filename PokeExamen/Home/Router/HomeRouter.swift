@@ -12,12 +12,13 @@ final class HomeRouter : HomeRouterProtocol {
     // MARK: - Attributes
     
     var controller: HomeViewController?
-    
+    var detailRouter : PokemonDetailRouterProtocol?
     // MARK: - Functions
     
     func setupComponents() {
         controller = HomeViewController()
         let presenter = HomePresenter()
+        detailRouter = PokemonDetailRouter()
         presenter.view = controller
         presenter.router = self
         controller?.presenter = presenter
@@ -30,8 +31,11 @@ final class HomeRouter : HomeRouterProtocol {
     }
     
     func goToDetail(with id: Int) {
-        let pokemonDetailRouter = PokemonDetailRouter()
-        pokemonDetailRouter.showDetail(with: id,from: controller!)
+        guard let fromVC = controller else {
+            return
+        }
+        
+        detailRouter?.showDetail(with: id, from: fromVC)
     }
     
     

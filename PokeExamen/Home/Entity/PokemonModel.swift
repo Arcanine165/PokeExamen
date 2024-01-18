@@ -12,8 +12,16 @@ struct PokemonModel : Codable{
     let name : String
     let sprites : Sprites
     let types : [TypeElement]
+    let stats : [Stats]
 }
-
+struct Stats : Codable {
+    let baseStat : Int
+    let effort : Int
+    let stat : SingleElement
+    enum CodingKeys: String, CodingKey {
+        case baseStat = "base_stat",effort,stat
+    }
+}
 struct Sprites : Codable{
     let frontImage : String?
     enum CodingKeys: String, CodingKey {
@@ -23,10 +31,10 @@ struct Sprites : Codable{
 
 struct TypeElement: Codable {
     let slot: Int
-    let type: Species
+    let type: SingleElement
 }
 
-struct Species: Codable {
+struct SingleElement: Codable {
     let name: String
     let url: String
 }
