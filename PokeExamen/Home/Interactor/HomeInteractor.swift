@@ -19,7 +19,6 @@ final class HomeInteractor : HomeInteractorProtocol, HomePresenterToInteractor{
             switch result {
             case .success(let response):
                 self?.presenter?.fetchPokemonSuccesfully(pokemon: response )
-                print(response)
             case .failure(let failure):
                 print(failure)
 

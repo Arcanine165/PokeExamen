@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     // MARK: - Functions
     
     func setupTimer(){
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) {[weak self] timer in
+        Timer.scheduledTimer(withTimeInterval: 30, repeats: true) {[weak self] timer in
             self?.presenter?.getPokemon()
         }
     }
@@ -69,6 +69,7 @@ extension HomeViewController : HomePresenterToView{
     
 }
 // MARK: - Extension UICollectionViewDelegates
+
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter?.pokemons.count ?? 0

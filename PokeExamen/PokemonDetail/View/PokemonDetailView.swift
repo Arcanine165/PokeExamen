@@ -8,6 +8,8 @@
 import UIKit
 
 class PokemonDetailView: UIView {
+    // MARK: - Attributes
+    
     lazy var pokemonImage : UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -89,6 +91,8 @@ class PokemonDetailView: UIView {
         return stack
     }()
     
+    // MARK: - Initialiazers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -98,6 +102,8 @@ class PokemonDetailView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Functions
     
     private func setupUI(){
         self.translatesAutoresizingMaskIntoConstraints = false

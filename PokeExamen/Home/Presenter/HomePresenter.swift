@@ -11,6 +11,7 @@ final class HomePresenter : HomePresenterProtocol,HomeViewToPresenter {
     
     
     // MARK: - Attributes
+    
     var interactor: HomePresenterToInteractor?
     weak var view : HomePresenterToView?
     var router : HomeRouterProtocol?
@@ -29,9 +30,11 @@ final class HomePresenter : HomePresenterProtocol,HomeViewToPresenter {
     func viewDidLoad() {
         getPokemon()
     }
+    
     func goToPokemonDetail(with id: Int) {
         router?.goToDetail(with: id)
     }
+    
     func getPokemon() {
         interactor?.getPokemon()
     }
@@ -40,6 +43,7 @@ final class HomePresenter : HomePresenterProtocol,HomeViewToPresenter {
 }
 
 extension HomePresenter : HomeInteractorToPresenter {
+    
     func fetchPokemonSuccesfully(pokemon : PokemonModel) {
         self.pokemons.append(pokemon)
         view?.reloadInfo()

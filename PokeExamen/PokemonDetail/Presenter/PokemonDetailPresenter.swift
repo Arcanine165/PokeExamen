@@ -8,6 +8,7 @@
 import Foundation
 
 final class PokemonDetailPresenter : PokemonDetailPresenterProtocol{
+    
     var id: Int!
     
     weak var view: PokemonDetailPresenterToView?
@@ -19,6 +20,7 @@ final class PokemonDetailPresenter : PokemonDetailPresenterProtocol{
 }
 
 extension PokemonDetailPresenter : PokemonDetailViewToPresenter {
+    
     func dissmissView() {
         router?.dissmissDetail()
     }
@@ -30,6 +32,7 @@ extension PokemonDetailPresenter : PokemonDetailViewToPresenter {
     
 }
 extension PokemonDetailPresenter : PokemonDetailInteractorToPresenter {
+    
     func fetchPokemonSuccesfully(pokemon: PokemonModel) {
         view?.showInfo(for: pokemon)
     }

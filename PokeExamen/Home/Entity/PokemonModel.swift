@@ -14,6 +14,7 @@ struct PokemonModel : Codable{
     let types : [TypeElement]
     let stats : [Stats]
 }
+
 struct Stats : Codable {
     let baseStat : Int
     let effort : Int
@@ -22,6 +23,7 @@ struct Stats : Codable {
         case baseStat = "base_stat",effort,stat
     }
 }
+
 struct Sprites : Codable{
     let frontImage : String?
     enum CodingKeys: String, CodingKey {
