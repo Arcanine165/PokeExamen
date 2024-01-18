@@ -10,9 +10,11 @@ import UIKit
 
 final class PokemonDetailRouter : PokemonDetailRouterProtocol{
     
-    var controller : PokemonDetailViewController?
+    var fromVC : UIViewController?
+    
     func showDetail(with id : Int,from viewController : UIViewController){
-        self.controller = PokemonDetailViewController()
+        let controller = PokemonDetailViewController()
+        self.fromVC = viewController
         let presenter = PokemonDetailPresenter()
         presenter.view = controller
         presenter.router = self
@@ -20,12 +22,13 @@ final class PokemonDetailRouter : PokemonDetailRouterProtocol{
         let interactor = PokemonDetailInteractor()
         interactor.presenter = presenter
         presenter.interactor = interactor
-        controller?.presenter = presenter
+        controller.presenter = presenter
         
-        controller?.modalPresentationStyle = .overFullScreen
-        viewController.present(controller!, animated: true)
+        controller.modalPresentationStyle = .overFullScreen
+        fromVC?.present(controller, animated: true)
     }
+    
     func dissmissDetail(){
-        controller?.dismiss(animated: true)
+        fromVC?.dismiss(animated: true)
     }
 }

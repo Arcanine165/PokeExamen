@@ -8,8 +8,7 @@
 import Foundation
 import UIKit
 
-protocol PokemonDetailRouterProtocol {
-    var controller : PokemonDetailViewController? {get set}
+protocol PokemonDetailRouterProtocol : AnyObject {
     func showDetail(with id : Int,from viewController : UIViewController)
     func dissmissDetail()
     
