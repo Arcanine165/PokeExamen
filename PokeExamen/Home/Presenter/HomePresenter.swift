@@ -8,10 +8,12 @@
 import Foundation
 
 final class HomePresenter : HomePresenterProtocol,HomeViewToPresenter {
+    
+    
     // MARK: - Attributes
     var interactor: HomePresenterToInteractor?
     weak var view : HomePresenterToView?
-    
+    var router : HomeRouterProtocol?
     
     var pokemons : [PokemonModel] = []
     
@@ -27,7 +29,9 @@ final class HomePresenter : HomePresenterProtocol,HomeViewToPresenter {
     func viewDidLoad() {
         getPokemon()
     }
-    
+    func goToPokemonDetail(with id: Int) {
+        router?.goToDetail(with: id)
+    }
     func getPokemon() {
         interactor?.getPokemon()
     }

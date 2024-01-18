@@ -19,7 +19,7 @@ final class HomeRouter : HomeRouterProtocol {
         controller = HomeViewController()
         let presenter = HomePresenter()
         presenter.view = controller
-        
+        presenter.router = self
         controller?.presenter = presenter
         
         let interactor = HomeInteractor()
@@ -29,8 +29,9 @@ final class HomeRouter : HomeRouterProtocol {
         
     }
     
-    func goToDetail() {
-        
+    func goToDetail(with id: Int) {
+        let pokemonDetailRouter = PokemonDetailRouter()
+        pokemonDetailRouter.showDetail(with: id,from: controller!)
     }
     
     
